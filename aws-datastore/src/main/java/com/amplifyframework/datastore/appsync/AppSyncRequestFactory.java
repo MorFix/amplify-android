@@ -142,7 +142,7 @@ final class AppSyncRequestFactory {
                 builder.variable("limit", "Int", limit);
             }
             if (!QueryPredicates.all().equals(predicate)) {
-                String filterType = "Model" + Casing.capitalizeFirst(modelSchema.getName()) + "FilterInput";
+                String filterType = "ModelSync" + Casing.capitalizeFirst(modelSchema.getName()) + "FilterInput";
                 QueryPredicate syncPredicate = predicate;
                 if (!(syncPredicate instanceof QueryPredicateGroup)) {
                     // When a filter is provided, wrap it with a predicate group of type AND.  By doing this, it enables
